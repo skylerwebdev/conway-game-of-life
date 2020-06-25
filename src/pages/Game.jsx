@@ -229,19 +229,29 @@ class Game extends React.Component {
           msec{" "}
           {isRunning ? (
             <button className="button" onClick={this.stopGame}>
-              Stop
+              Pause
             </button>
           ) : (
             <button className="button" onClick={this.runGame}>
-              Run
+              Play
             </button>
           )}{" "}
-          <button className="button" onClick={this.handleRandom}>
-            Random
-          </button>
-          <button className="button" onClick={this.handleClear}>
-            Clear
-          </button>
+          {isRunning ? (
+<></>
+          ) : (
+            <button className="button" onClick={this.handleRandom}>
+              Random
+            </button>
+          )}{" "}
+          {isRunning ? (
+            <button className="button" onClick={this.handleClear}>
+              Stop and Clear
+            </button>
+          ) : (
+            <button className="button" onClick={this.handleClear}>
+              Clear
+            </button>
+          )}{" "}
         </div>
         <div className="iterationCounter">
           {/* Width (px): <input value={this.state.width} onChange={this.handleWidthChange}/>{" "}
