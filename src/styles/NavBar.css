@@ -1,0 +1,14 @@
+.active{
+    color: red;
+}
+a{
+    margin-right: 10px;
+    font-size: large;
+    text-decoration: none;
+    color: black;
+}
+.navBar{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+}

@@ -143,6 +143,12 @@ class Game extends React.Component {
       this.runIteration();
     }, this.state.interval);
   }
+      /**
+     * Calculate the number of neighbors at point (x, y)
+     * @param {Array} board 
+     * @param {int} x 
+     * @param {int} y 
+     */
   calculateNeighbors(board, x, y) {
     let neighbors = 0;
     const dirs = [
@@ -203,6 +209,7 @@ class Game extends React.Component {
     const { cells, interval, isRunning } = this.state;
     return (
       <>
+      <h1>Conway's Game Of Life</h1>
         <div
           className="board"
           style={{
