@@ -1,10 +1,11 @@
 import React from 'react'
+import '../styles/NavBar.css'
 import { NavLink as NL } from 'react-router-dom'
 const NavBar = () => {
     return (
-        <div>
+        <div className="navBar">
           <NL exact to='/'>Rules</NL>  
-          <NL to='/game'>Play Conway's Game of Life</NL>
+          <NL exact to='/game'>Play Conway's Game of Life</NL>
         </div>
     )
 }

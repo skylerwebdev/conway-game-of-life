@@ -6,7 +6,7 @@ const AppRouter = () => {
   return (
     <S>
       <R exact path="/" component={Rules} />
-      <R path="/game" component={Game} />
+      <R exact path="/game" component={Game} />
     </S>
   );
 };

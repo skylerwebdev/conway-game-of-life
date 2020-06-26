@@ -143,6 +143,12 @@ class Game extends React.Component {
       this.runIteration();
     }, this.state.interval);
   }
+      /**
+     * Calculate the number of neighbors at point (x, y)
+     * @param {Array} board 
+     * @param {int} x 
+     * @param {int} y 
+     */
   calculateNeighbors(board, x, y) {
     let neighbors = 0;
     const dirs = [
@@ -203,6 +209,7 @@ class Game extends React.Component {
     const { cells, interval, isRunning } = this.state;
     return (
       <>
+      <h1>Conway's Game Of Life</h1>
         <div
           className="board"
           style={{
@@ -229,19 +236,29 @@ class Game extends React.Component {
           msec{" "}
           {isRunning ? (
             <button className="button" onClick={this.stopGame}>
-              Stop
+              Pause
             </button>
           ) : (
             <button className="button" onClick={this.runGame}>
-              Run
+              Play
             </button>
           )}{" "}
-          <button className="button" onClick={this.handleRandom}>
-            Random
-          </button>
-          <button className="button" onClick={this.handleClear}>
-            Clear
-          </button>
+          {isRunning ? (
+<></>
+          ) : (
+            <button className="button" onClick={this.handleRandom}>
+              Random
+            </button>
+          )}{" "}
+          {isRunning ? (
+            <button className="button" onClick={this.handleClear}>
+              Stop and Clear
+            </button>
+          ) : (
+            <button className="button" onClick={this.handleClear}>
+              Clear
+            </button>
+          )}{" "}
         </div>
         <div className="iterationCounter">
           {/* Width (px): <input value={this.state.width} onChange={this.handleWidthChange}/>{" "}
